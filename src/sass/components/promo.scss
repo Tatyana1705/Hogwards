@@ -1,0 +1,63 @@
+.promo {
+  display: block;
+  height: 420px;
+  background-image: url("../img/bg-mob.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  @media (min-width: $tablet) {
+    height: fit-content;
+  }
+}
+
+.promo__btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 22em;
+  left: 0;
+  right: 0;
+  z-index: 80;
+
+  @media (min-width: $tablet) {
+    top: 30em;
+  }
+
+  @media (min-width: $desktop) {
+    top: 38em;
+  }
+}
+
+.promo__link {
+  @include link-waves;
+  width: 70%;
+  background-image: linear-gradient(266.23deg, #fcffcc 24.64%, #6ad7ce 119.84%);
+  padding: 15px;
+  font-family: "Calypso", "Arial", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #070c0e;
+
+  @media (min-width: $tablet) {
+    width: 66%;
+    padding: 30px;
+    font-size: 25px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 33%;
+    font-size: 38px;
+  }
+}
+
+.link {
+  @include link-animate;
+  background-color: transparent;
+  background-image: linear-gradient(266.23deg, #fcffcc 24.64%, #6ad7ce 119.84%);
+
+  &::after {
+    background-color: transparent;
+    background-image: linear-gradient(266.23deg, #fcffcc 24.64%, #6ad7ce 119.84%);
+  }
+}

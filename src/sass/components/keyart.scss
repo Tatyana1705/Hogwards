@@ -1,0 +1,83 @@
+.keyart,
+.keyart__layer {
+  @media (min-width: $tablet) {
+    height: 700px;
+  }
+
+  @media (min-width: $desktop) {
+    height: 1000px;
+  }
+}
+
+.keyart {
+  @media (min-width: $tablet) {
+    position: relative;
+    z-index: 10;
+
+    &--parallax {
+      display: block;
+    }
+  }
+}
+
+.keyart__layer {
+  @media (min-width: $tablet) {
+    position: absolute;
+    width: 100%;
+    background-position: bottom center;
+    background-size: auto 700px;
+    background-repeat: repeat-x;
+
+    &--0 {
+      background-image: url("../img/layer-1@2x.png");
+      background-color: #8a40ec;
+    }
+
+    &--1 {
+      background-image: url("../img/layer-2@2x.png");
+    }
+
+    &--2 {
+      background-image: url("../img/layer-3@2x.png");
+    }
+
+    &--3 {
+      background-image: url("../img/layer-4@2x.png");
+    }
+
+    &--4 {
+      background-image: url("../img/layer-5@2x.png");
+    }
+
+    &--5 {
+      background-image: url("../img/layer-6@2x.png");
+    }
+
+    &--6 {
+      background-image: url("../img/layer-7@2x.png");
+    }
+
+    &--7 {
+      background-image: url("../img/layer-8@2x.png");
+    }
+
+    &--8 {
+      background-image: url("../img/layer-10@2x.png");
+    }
+
+    &--scrim {
+      background-color: #8a40ec;
+      opacity: 0;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    background-size: auto 1038px;
+  }
+}
+
+.keyart__layer .parallax {
+  @media (min-width: $tablet) {
+    position: fixed;
+  }
+}

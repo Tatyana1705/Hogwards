@@ -39,35 +39,3 @@ body {
     @include wrapper-desktop;
   }
 }
-
-.btn {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 20px 34px;
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  color: #ffffff;
-  border: none;
-  background-image: linear-gradient(180deg, #96C6FF 0%, #5749AA 100%);
-  box-shadow: 2px 2px 0px #3E82B9;
-  border-radius: 10px;
-  cursor: pointer;
-
-  &:hover {
-    @media (hover: hover) {
-      background-image: linear-gradient(180deg, #CB69FA 0%, #615BBC 100%);
-    }
-  }
-
-  &:active,
-  &:disabled {
-    background-image: linear-gradient(180deg, #CB69FA 0%, #615BBC 100%);
-  }
-
-  &:disabled {
-    cursor: auto;
-  }
-}

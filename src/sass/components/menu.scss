@@ -1,0 +1,68 @@
+.menu__logo-link {
+  position: relative;
+  margin-right: 20px;
+  z-index: 100;
+
+  @media (min-width: $tablet) {
+    & img {
+      width: 170px;
+      height: auto;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    & img {
+      width: 200px;
+    }
+  }
+}
+
+.menu--open .main-nav {
+  transform: translateY(0%);
+  transition: transform 0.2 ease;
+}
+
+
+.menu--open .main-nav__item {
+  opacity: 1;
+
+  &:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  &:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  &:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  &:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+}
+
+.menu--open .burger__line {
+  background-color: #ffffff;
+
+  &:nth-child(1) {
+    transform: scaleX(0);
+  }
+
+  &:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  &:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  &:nth-child(4) {
+    transform: scaleX(0);
+  }
+}

@@ -1,0 +1,15 @@
+.progressbar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 1360px;
+  background-color: #000000;
+  box-sizing: border-box;
+  z-index: 150;
+
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}

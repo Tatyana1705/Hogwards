@@ -39,3 +39,9 @@ body {
     @include wrapper-desktop;
   }
 }
+
+.backgound-page {
+  position: relative;
+  z-index: 10;
+  background-color: #011121;
+}

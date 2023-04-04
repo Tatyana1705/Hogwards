@@ -1,31 +1,26 @@
-(function () {
-  function castParallax() {
-    const layers = document.getElementsByClassName("parallax");
+import * as basicScroll from 'basicscroll';
 
-    if (!layers) {
-      return;
-    }
+(function() {
+  const layers = document.querySelectorAll('.keyart__layer');
 
-    window.addEventListener("scroll", function(event){
+  layers.forEach((elem) => {
+    const modifier = elem.getAttribute('data-modifier');
 
-      var top = this.scrollY;
-
-      if (top > 400) {
-        return;
-      }
-
-      var layer, speed, yPos;
-      for (var i = 0; i < layers.length; i++) {
-        layer = layers[i];
-        speed = layer.getAttribute('data-speed');
-        var yPos = -(top * speed / 100);
-
-        layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
+    const instans = basicScroll.default.create({
+      elem,
+      from: 0,
+      to: 519,
+      direct: true,
+      props: {
+        '--translateY': {
+          from: '0',
+          to: `${ 10 * modifier }px`
+        }
       }
     });
-  }
 
-  window.addEventListener('load', () => {
-    castParallax();
+
+    instans.start();
+
   });
 })();

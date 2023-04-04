@@ -1,0 +1,26 @@
+.versions__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.versions__title {
+  @include title;
+  margin-bottom: 40px;
+}
+
+.versions__tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+}

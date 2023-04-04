@@ -1,0 +1,64 @@
+.info {
+  display: none;
+}
+
+.info-active {
+  display: block;
+}
+
+.info__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeEffect 0.8s ease;
+
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+  }
+}
+
+.info__img {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-right: 50px;
+  }
+}
+
+.info__text {
+  font-size: 15px;
+  line-height: 16px;
+
+  & p {
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  & ul {
+    padding-left: 15px;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}

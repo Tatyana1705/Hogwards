@@ -1,8 +1,8 @@
 (function() {
   const progressBar = document.querySelector('.progressbar');
-  const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-  window.addEventListener('scroll', ()=>{
+  window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const windowScroll = window.pageYOffset;
     const progressBarWidth  = (windowScroll / windowHeight).toFixed(2);
 

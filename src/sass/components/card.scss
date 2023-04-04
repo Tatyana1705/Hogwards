@@ -1,0 +1,245 @@
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: $desktop) {
+    gap: 70px;
+  }
+}
+
+.card__container {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  &:active .card__front {
+    transform: rotateY(-180deg);
+  }
+
+  &:active .card__back {
+    transform: rotateY(0deg);
+  }
+
+  @media (min-width: $desktop) {
+    &:active .card__front {
+      transform: none;
+    }
+
+    &:active .card__back {
+      transform: none;
+    }
+
+    &:hover .card__front {
+      @media (hover: hover) {
+        transform: rotateY(-180deg);
+      }
+    }
+
+    &:hover .card__back {
+      @media (hover: hover) {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}
+
+.card__inner {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  &--back {
+    display: flex;
+    flex-direction: column;
+    position: static;
+  }
+}
+
+.card__title {
+  @include default-title;
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 65%;
+  font-family: "Calypso", "Arial", serif;
+  font-size: 25px;
+  text-align: center;
+  transform: translateZ(130px) scale(0.84);
+
+  @media (min-width: $tablet) {
+    top: 73%;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 40px;
+  }
+}
+
+.card__img {
+  display: block;
+  position: relative;
+  min-height: 270px;
+  transform: translateZ(60px) scale(0.9);
+
+  @media (min-width: $tablet) {
+    min-height: 350px;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 430px;
+    background-size: contain;
+  }
+}
+
+.card__image {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateZ(80px) scale(0.9);
+
+  & img {
+    display: block;
+    border-radius: 30px;
+    width: auto;
+    height: 270px;
+    overflow: hidden;
+
+    @media (min-width: $tablet) {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.card__front,
+.card__back {
+  min-height: 270px;
+  border-radius: 30px;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  backface-visibility: hidden;
+
+  @media (min-width: $tablet) {
+    min-height: 350px;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 430px;
+  }
+}
+
+.card__front {
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #012137;
+  background-image: linear-gradient(261.2deg, #fbf1a2 17.31%, #4a9988 132.94%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+
+.card__wrapper {
+  display: flex;
+  justify-content: center;
+  transform: translateZ(80px) scale(0.9);
+}
+
+.card__name {
+  font-family: "Calypso", "Arial", serif;
+  font-size: 20px;
+  margin: 30px 30px 10px 30px;
+  transform: translateZ(80px) scale(0.9);
+
+  @media (min-width: $tablet) {
+    font-size: 17px;
+    margin: 50px 25px 5px 25px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 30px;
+    margin: 60px 25px 10px 25px;
+  }
+}
+
+.card__text {
+  font-size: 14px;
+  margin: 0 30px;
+  margin-top: 0;
+  transform: translateZ(60px) scale(0.94);
+
+  @media (min-width: $tablet) {
+    margin: 0 25px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 20px;
+    margin: 0 30px;
+  }
+}
+
+.card__link {
+  @include default-link;
+  width: 70%;
+  padding: 15px;
+  margin: 15px;
+  font-family: "Calypso", "Arial", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+
+  &:link {
+    position: absolute;
+    display: block;
+    border-radius: 50px;
+    transition: all 0.2s;
+  }
+
+  &:visited {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50px;
+    transition: all 0.2s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    @media (hover: hover) {
+      transform: translateY(-3px);
+    }
+
+    &::after {
+      transform: scaleX(1.1) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+}
+

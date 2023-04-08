@@ -1,0 +1,29 @@
+.tablinks {
+  @include button;
+  @include atom;
+  width: 7em;
+  padding: 13px;
+  font-family: "Calypso", "Arial", serif;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 700;
+  border-color: #ffffff;
+
+  &__btn--element {
+    width: calc(7em * 0.1);
+
+    &::after {
+      background-color: #f9e499;
+      border: 3px solid #ffffff;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    width: 12em;
+    padding: 20px;
+
+    &__btn--element {
+      width: calc(12em * 0.1);
+    }
+  }
+}

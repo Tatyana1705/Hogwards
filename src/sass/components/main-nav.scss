@@ -7,7 +7,7 @@
   z-index: 90;
 
   padding-top: 100px;
-  background-color: #0b212a;
+  background-color: #f4d18c;
   color: #ffffff;
 
   display: flex;
@@ -54,9 +54,9 @@
 .main-nav__link {
   @include default-link;
   @include main-link;
-  font-family: "Calypso", "Arial", sans-serif;
+  font-family: "Calypso", "Arial", serif;
   font-size: 20px;
-  color: #ffffff;
+  color: #011527;
   font-weight: 700;
 
   @media (min-width: $tablet) {
@@ -68,12 +68,12 @@
   }
 }
 
-.main-nav__btn {
+.button {
   @include default-link;
   @include atom;
-  font-family: "Calypso", "Arial", sans-serif;
+  font-family: "Calypso", "Arial", serif;
   font-size: 20px;
-  color: #ffffff;
+  color: #011527;
   font-weight: 700;
 
   @media (min-width: $tablet) {
